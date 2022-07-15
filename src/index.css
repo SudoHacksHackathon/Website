@@ -2,24 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-@keyframes cursor-blink {
-  0% {
-    opacity: 0;
-  }
+/* No other way to get it inline through JavaScript */
+.Typewriter {
+  display: inline;
 }
-
-.blinking {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.blinking::after {
-  content: "";
-  width: 1rem;
-  height: 3rem;
-  background: #FFFFFF;
-  display: inline-block;
-  animation: cursor-blink 1.5s steps(2) infinite;
-}*/

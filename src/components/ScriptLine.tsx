@@ -14,7 +14,7 @@ const ScriptLine = ({
   return (
     <div>
       <span className="text-green-600 text-m">{OSObject.commandStart} </span>
-      <div className="inline-block text-slate-50 text-m">
+      <div className="inline text-slate-50 md:text-base text-sm">
         <Typewriter
           onInit={(typewriter) => {
             typewriter
