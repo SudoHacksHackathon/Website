@@ -1,5 +1,7 @@
 import Typewriter from "typewriter-effect";
 
+import OSObject from "../variables/OS.var";
+
 const ScriptLine = ({
   children,
   onFinish,
@@ -11,7 +13,7 @@ const ScriptLine = ({
 }) => {
   return (
     <div>
-      <span className="text-green-600 text-m">$ </span>
+      <span className="text-green-600 text-m">{OSObject.commandStart} </span>
       <div className="inline-block text-slate-50 text-m">
         <Typewriter
           onInit={(typewriter) => {
