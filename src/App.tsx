@@ -6,10 +6,6 @@ import SignupScreen from "./screens/SignupScreen";
 
 import OSObject from "./variables/OS.var";
 
-const TerminalButton = () => {
-  return <div></div>;
-};
-
 const App = () => {
   const [screen, setScreen] = useState(0);
 
