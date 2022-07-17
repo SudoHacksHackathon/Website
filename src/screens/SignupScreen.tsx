@@ -6,10 +6,11 @@ import Button from "../components/Button";
 
 import generateRandomText from "../util/generateRandomText";
 import delay from "../util/delay";
-
-import OSObject from "../variables/OS.var";
+import getOSData from "../util/getOSData";
 
 const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
+  const OSData = getOSData();
+
   const [randomText, setRandomText] = useState("\u00a0"); // Invisible space so randomText evaluates to true (&nbsp;)
 
   const [name, setName] = useState("");
@@ -59,7 +60,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           loadForm();
         }}
       >
-        {OSObject.commands.execute + " ./signup.sh"}
+        {OSData.commands.execute + " ./signup.sh"}
       </ScriptLine>
 
       {randomText ? (
@@ -93,6 +94,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
                 required
               />
             </div>
+            
             <div className="mb-6">
               <label
                 htmlFor="email"

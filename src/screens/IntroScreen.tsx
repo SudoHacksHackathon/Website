@@ -2,17 +2,17 @@ import { useState } from "react";
 
 import ScriptLine from "../components/ScriptLine";
 import Button from "../components/Button";
-
-import OSObject from "../variables/OS.var";
+import getOSData from "../util/getOSData";
 
 const IntroScreen = ({ nextScreen }: { nextScreen: () => void }) => {
+  const OSData = getOSData();
   const [revealed, setRevealed] = useState(false);
 
   return (
     // add more padding b/c of button
     <div className="flex flex-col grow space-y-5 pb-3">
       <ScriptLine onFinish={() => setRevealed(true)}>
-        {OSObject.commands.print + " ./sudohacks2022.md"}
+        {OSData.commands.print + " ./sudohacks2022.md"}
       </ScriptLine>
 
       {/* TODO: add text-sizes and such to a theme! */}
