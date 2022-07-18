@@ -3,7 +3,7 @@ import React from "react";
 const Button = ({
   children,
   textClass,
-  action,
+  action
 }: {
   children: string;
   textClass: string;

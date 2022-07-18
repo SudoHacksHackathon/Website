@@ -1,6 +1,6 @@
 const generateRandomText = () => {
   const CHARS = '!"$%&/=@~`#';
-  const NUM_CHARS = 5000; // cut off using overflow: hidden
+  const NUM_CHARS = 10000; // cut off using overflow: hidden
 
   let result = "";
   for (let i = 0; i < NUM_CHARS; i++) {

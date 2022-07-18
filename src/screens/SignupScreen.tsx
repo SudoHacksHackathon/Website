@@ -43,7 +43,6 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           "Content-Type": "application/json",
         },
       }
-
     );
 
     nextScreen();
@@ -70,8 +69,8 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           <iframe
             name="dummyframe"
             id="dummyframe"
-            style={{display: "none"}}
-          ></iframe> 
+            style={{ display: "none" }}
+          ></iframe>
           {/* empty frame to stop redirection */}
 
           <form className="w-5/6" target="dummyframe">
@@ -94,7 +93,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
                 required
               />
             </div>
-            
+
             <div className="mb-6">
               <label
                 htmlFor="email"

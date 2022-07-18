@@ -4,7 +4,7 @@ import ScriptLine from "../components/ScriptLine";
 import Button from "../components/Button";
 import getOSData from "../util/getOSData";
 
-const ThankyouScreen = () => {
+const EndScreen = () => {
   const OSData = getOSData();
   const [revealed, setRevealed] = useState(false);
 
@@ -20,7 +20,8 @@ const ThankyouScreen = () => {
         <>
           <h1 className="text-slate-50 lg:text-5xl md:text-4xl text-3xl">
             <span className="text-gray-600"># </span>
-            <span className="text-green-500">Thank you!</span>
+            <span className="text-green-500">Thank you</span> for submitting the
+            interest form!
           </h1>
 
           <h2 className="text-slate-50 lg:text-2xl md:text-xl text-xl">
@@ -32,19 +33,25 @@ const ThankyouScreen = () => {
             our socials:
           </h2>
 
-          <div className="flex justify-between w-9/12 p-5">
-            <Button textClass="text-md" action={() => console.log("e")}>
-              Discord
-            </Button>
-            <Button textClass="text-md" action={() => console.log("e")}>
-              Slack
-            </Button>
-            <Button textClass="text-md" action={() => console.log("e")}>
-              Instagram
-            </Button>
-            <Button textClass="text-md" action={() => console.log("e")}>
-              Twitter
-            </Button>
+          <div className="w-full flex-grow p-5 px-10">
+            <div className="w-full h-full flex justify-between place-items-center">
+              {/* TODO: add logos */}
+              <Button
+                textClass="text-2xl"
+                action={() => console.log("e")}
+              >
+                Discord
+              </Button>
+              <Button textClass="text-2xl" action={() => console.log("e")}>
+                Slack
+              </Button>
+              <Button textClass="text-2xl" action={() => console.log("e")}>
+                Instagram
+              </Button>
+              <Button textClass="text-2xl" action={() => console.log("e")}>
+                Twitter
+              </Button>
+            </div>
           </div>
         </>
       )}
@@ -52,4 +59,4 @@ const ThankyouScreen = () => {
   );
 };
 
-export default ThankyouScreen;
+export default EndScreen;

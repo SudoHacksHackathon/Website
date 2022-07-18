@@ -10,7 +10,6 @@ interface OSData {
 let cachedOSData: null | OSData = null;
 
 const getOSData = () => {
-  // TODO: what the HELL IS THIS CODE ROHAN PLEASE
   if (!cachedOSData) {
     let os: null | string = null;
     let commandStart: null | string = null;
