@@ -8,6 +8,8 @@ import generateRandomText from "../util/generateRandomText";
 import delay from "../util/delay";
 import getOSData from "../util/getOSData";
 
+import { useNavigate } from "react-router-dom";
+
 const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
   const OSData = getOSData();
 
@@ -16,6 +18,8 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const loadForm = async () => {
     for (let j = 0; j < 100; j++) {
@@ -27,12 +31,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
   };
 
   const onSubmit = async () => {
-    console.log({
-      name: name,
-      email: email,
-      message: message,
-    });
-    const res = await axios.post(
+    await axios.post(
       "https://nocodeform.io/f/62d1bea391801df0ffe3ae7d",
       {
         name: name,
@@ -44,9 +43,10 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           "Content-Type": "application/json",
         },
       }
+
     );
 
-    console.log(res);
+    nextScreen();
   };
 
   return (

@@ -1,6 +1,6 @@
 import Typewriter from "typewriter-effect";
 
-import OSObject from "../variables/OS.var";
+import getOSData from "../util/getOSData";
 
 const ScriptLine = ({
   children,
@@ -11,9 +11,11 @@ const ScriptLine = ({
   onFinish: () => void;
   initialPause?: number;
 }) => {
+  const OSData = getOSData();
+
   return (
     <div>
-      <span className="text-green-600 text-m">{OSObject.commandStart} </span>
+      <span className="text-green-600 text-m">{OSData.commandStart} </span>
       <div className="inline text-slate-50 md:text-base text-sm">
         <Typewriter
           onInit={(typewriter) => {

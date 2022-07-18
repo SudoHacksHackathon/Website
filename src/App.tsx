@@ -3,11 +3,17 @@ import useIP from "./hooks/useIP";
 
 import IntroScreen from "./screens/IntroScreen";
 import SignupScreen from "./screens/SignupScreen";
+import ThankyouScreen from "./screens/ThankyouScreen"
+
 import getOSData from "./util/getOSData";
+
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 const App = () => {
   const ip = useIP();
   const OSData = getOSData();
+
+  const navigate = useNavigate();
 
   const [screen, setScreen] = useState(0);
   const nextScreen = () => setScreen(screen + 1);
@@ -21,8 +27,11 @@ const App = () => {
           </p>
         </div>
         <div className="flex flex-col p-5 grow overflow-y-auto">
-          {screen === 0 && <IntroScreen nextScreen={nextScreen} />}
-          {screen === 1 && <SignupScreen nextScreen={nextScreen} />}
+          <Routes>
+            <Route path="/" element={<IntroScreen nextScreen={() => {navigate("/reserve")}} />}/>
+            <Route path="/reserve" element={<SignupScreen nextScreen={() => {navigate("/thankyou")}} />}/>
+            <Route path="/thankyou" element={<ThankyouScreen />}/>
+          </Routes>
         </div>
       </div>
     </div>
