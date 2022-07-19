@@ -5,7 +5,7 @@ const Button = ({
   textClass,
   action
 }: {
-  children: string;
+  children: JSX.Element | string;
   textClass: string;
   action: () => void;
 }) => {
