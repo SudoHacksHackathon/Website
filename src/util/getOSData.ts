@@ -9,40 +9,61 @@ interface OSData {
 
 let cachedOSData: null | OSData = null;
 
+// thanks to https://stackoverflow.com/a/18706818/11483682
+const clientStrings = [
+  { s: "Windows 10", r: /(Windows 10.0|Windows NT 10.0)/ },
+  { s: "Windows 8.1", r: /(Windows 8.1|Windows NT 6.3)/ },
+  { s: "Windows 8", r: /(Windows 8|Windows NT 6.2)/ },
+  { s: "Windows 7", r: /(Windows 7|Windows NT 6.1)/ },
+  { s: "Windows Vista", r: /Windows NT 6.0/ },
+  { s: "Windows Server 2003", r: /Windows NT 5.2/ },
+  { s: "Windows XP", r: /(Windows NT 5.1|Windows XP)/ },
+  { s: "Windows 2000", r: /(Windows NT 5.0|Windows 2000)/ },
+  { s: "Windows ME", r: /(Win 9x 4.90|Windows ME)/ },
+  { s: "Windows 98", r: /(Windows 98|Win98)/ },
+  { s: "Windows 95", r: /(Windows 95|Win95|Windows_95)/ },
+  { s: "Windows NT 4.0", r: /(Windows NT 4.0|WinNT4.0|WinNT|Windows NT)/ },
+  { s: "Windows CE", r: /Windows CE/ },
+  { s: "Windows 3.11", r: /Win16/ },
+  { s: "Android", r: /Android/ },
+  { s: "Open BSD", r: /OpenBSD/ },
+  { s: "Sun OS", r: /SunOS/ },
+  { s: "Chrome OS", r: /CrOS/ },
+  { s: "Linux", r: /(Linux|X11(?!.*CrOS))/ },
+  { s: "iOS", r: /(iPhone|iPad|iPod)/ },
+  { s: "Mac OS X", r: /Mac OS X/ },
+  { s: "Mac OS", r: /(Mac OS|MacPPC|MacIntel|Mac_PowerPC|Macintosh)/ },
+  { s: "QNX", r: /QNX/ },
+  { s: "UNIX", r: /UNIX/ },
+  { s: "BeOS", r: /BeOS/ },
+  { s: "OS/2", r: /OS\/2/ },
+  {
+    s: "Search Bot",
+    r: /(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask Jeeves\/Teoma|ia_archiver)/,
+  },
+];
+
 const getOSData = () => {
   if (!cachedOSData) {
-    let os: null | string = null;
-    let commandStart: null | string = null;
-    let printCommand: null | string = null;
-    let executeCommand: null | string = null;
+    let os: string = "Unknown OS";
 
-    if (navigator.userAgent.indexOf("Win") != -1) {
-      os = "Windows";
-      commandStart = ">";
-      printCommand = "type";
-      executeCommand = "bash";
-    } else {
-      printCommand = "cat";
-      executeCommand = "sudo";
-
-      if (navigator.userAgent.indexOf("Mac") != -1) {
-        os = "Macintosh";
-        commandStart = "$";
-      } else if (navigator.userAgent.indexOf("Linux") != -1) {
-        os = "Linux OS";
-        commandStart = "#";
-      } else {
-        os = "Unknown OS";
-        commandStart = "$";
+    for (var id in clientStrings) {
+      if (clientStrings[id].r.test(navigator.userAgent)) {
+        os = clientStrings[id].s;
+        break;
       }
     }
 
     cachedOSData = {
       OS: os,
-      commandStart,
+      commandStart: os.includes("Windows")
+        ? ">"
+        : os.includes("Linux")
+        ? "#"
+        : "$",
       commands: {
-        print: printCommand,
-        execute: executeCommand,
+        print: os.includes("Windows") ? "type" : "cat",
+        execute: os.includes("Windows") ? "bash" : "sudo",
       },
     };
   }
