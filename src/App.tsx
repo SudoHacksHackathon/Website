@@ -19,26 +19,30 @@ const App = () => {
   return (
     <div className="bg-slate-900 h-full w-full flex justify-center place-items-center selection:bg-slate-200 selection:text-black p-3">
       <div className="rounded-xl w-[min(100%,_75rem)] h-[min(100%,_42.1875rem)] bg-black font-mono flex flex-col">
-        <div className="rounded-t-xl w-full h-7 bg-white flex place-items-center justify-center">
-          <div className="flex-1 flex justify-start align-items-center pl-5">
-            <button onClick={() => navigate(-1)}>
-              <MdArrowBackIosNew />
-            </button>
-          </div>
+        <div className="rounded-t-xl w-full h-7 bg-white">
+          <div className="flex place-items-center w-full h-full">
+            <div className="flex justify-start align-items-center pl-3">
+              <button onClick={() => navigate(-1)}>
+                <MdArrowBackIosNew />
+              </button>
+            </div>
 
-          <div className="flex-1 flex justify-center align-items-center">
-            <p className="md:text-base text-sm overflow-hidden mx-5 whitespace-nowrap text-ellipsis flex">
-              ssh root@{ip || "127.0.0.1"} ({OSData.OS})
-            </p>
-          </div>
-          
-          <div className="flex-1 flex justify-end align-items-center pr-5">
-            <button onClick={() => navigate(1)}>
-              <MdArrowForwardIos />
-            </button>
+            <div className="flex-1 flex justify-center align-items-center mx-3 w-0">
+              <p className="md:text-base text-sm overflow-hidden whitespace-nowrap text-ellipsis">
+                {ip === undefined
+                  ? "Loading..."
+                  : `ssh root@${ip === null ? "127.0.0.1" : ip} (${OSData.OS})`}
+              </p>
+            </div>
+
+            <div className="flex justify-end align-items-center pr-3">
+              <button onClick={() => navigate(1)}>
+                <MdArrowForwardIos />
+              </button>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col p-5 grow overflow-y-auto border-slate-700 border-2 rounded-b-lg">
+        <div className="flex flex-col p-5 grow overflow-y-auto border-slate-700 h-full border-2 rounded-b-lg">
           <Routes>
             <Route
               path="/"

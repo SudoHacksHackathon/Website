@@ -13,16 +13,15 @@ const getIP = async () => {
 }
 
 const useIP = () => {
-  const [ip, setIP] = useState<null | string>(null);
+  const [ip, setIP] = useState<null | undefined | string>(undefined);
 
   useEffect(() => {
     (async () => {
       try {
         setIP(await getIP());
       } catch (e) {
-        // TODO: should this error? no need for unnecessary state change
         console.error(e);
-        // setIP(null);
+        setIP(null);
       }
     })();
   });

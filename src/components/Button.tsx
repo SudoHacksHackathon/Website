@@ -2,12 +2,12 @@ import React from "react";
 
 const Button = ({
   children,
+  action,
   textClass,
-  action
 }: {
-  children: JSX.Element | string;
-  textClass: string;
+  children: React.ReactNode;
   action: () => void;
+  textClass?: string;
 }) => {
   return (
     <button
