@@ -84,7 +84,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
               <input
                 type="text"
                 id="name"
-                className="border text-sm block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-slate-50"
+                className="outline-none text-sm block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-slate-50"
                 placeholder="John Doe"
                 value={name}
                 onChange={(e) => {
@@ -104,7 +104,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
               <input
                 type="text"
                 id="email"
-                className="border text-sm block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-slate-50"
+                className="outline-none text-sm block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-slate-50"
                 placeholder="example@gmail.com"
                 value={email}
                 onChange={(e) => {
@@ -124,7 +124,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
               <textarea
                 id="message"
                 rows={4}
-                className="block p-2.5 w-full text-sm border bg-gray-700 border-gray-600 placeholder-gray-400 text-slate-50"
+                className="block outline-none p-2.5 w-full text-sm border bg-gray-700 border-gray-600 placeholder-gray-400 text-slate-50"
                 placeholder="Leave a message or question..."
                 value={message}
                 onChange={(e) => {

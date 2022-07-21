@@ -41,7 +41,14 @@ const IntroScreen = ({ nextScreen }: { nextScreen: () => void }) => {
             secure your spot!
           </p>
 
-          <div className="flex grow place-items-center justify-center">
+          <div className="flex flex-col lg:space-y-14 md:space-y-10 space-y-7 grow place-items-center justify-center">
+            <h1 className="text-slate-50 lg:text-5xl md:text-4xl text-3xl text-center">
+              Date: <span className="text-green-500">TBD</span>
+              <br />
+              <span className="lg:text-lg md:text-md text-sm">
+                An email will be sent out when the date has been decided.
+              </span>
+            </h1>
             <Button
               textClass="lg:text-4xl md:text-3xl text-2xl"
               action={nextScreen}
