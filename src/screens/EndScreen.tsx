@@ -59,12 +59,19 @@ const EndScreen = () => {
               <SocialButton
                 icon={DiscordIcon}
                 text="Discord"
-                action={() => console.log("discord")}
+                action={() =>
+                  window.open("https://discord.gg/fKukUkG57H", "_blank")
+                }
               />
               <SocialButton
                 icon={SlackIcon}
                 text="Slack"
-                action={() => console.log("Slack")}
+                action={() =>
+                  window.open(
+                    "https://join.slack.com/t/sudohacksworkspace/shared_invite/zt-1d4y7xehh-kZTxFuk~Bhad76oSpI_bng",
+                    "_blank"
+                  )
+                }
               />
               <SocialButton
                 icon={InstagramIcon}

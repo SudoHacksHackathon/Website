@@ -33,7 +33,7 @@ const App = () => {
         options={{
           preset: "links",
         }}
-        canvasClassName="blur-[2px] brightness-150"
+        canvasClassName="brightness-150"
       />
       <div className="bg-[#111111] h-full w-full flex justify-center place-items-center selection:bg-slate-200 selection:text-black p-3">
         <Draggable handle=".handle" bounds="parent">

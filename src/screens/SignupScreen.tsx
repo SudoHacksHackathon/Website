@@ -73,7 +73,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           ></iframe>
           {/* empty frame to stop redirection */}
 
-          <form className="w-5/6" target="dummyframe">
+          <form className="sm:w-5/6 w-full" target="dummyframe">
             <div className="mb-6">
               <label
                 htmlFor="name"

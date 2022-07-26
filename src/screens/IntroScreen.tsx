@@ -43,10 +43,10 @@ const IntroScreen = ({ nextScreen }: { nextScreen: () => void }) => {
 
           <div className="flex flex-col lg:space-y-14 md:space-y-10 space-y-7 grow place-items-center justify-center">
             <h1 className="text-slate-50 lg:text-5xl md:text-4xl text-3xl text-center">
-              Date: <span className="text-green-500">TBD</span>
+              Date: <span className="text-green-500">August 2022</span>
               <br />
               <span className="lg:text-lg md:text-md text-sm">
-                An email will be sent out when the date has been decided.
+                An email will be sent out with the exact date soon!
               </span>
             </h1>
             <Button
