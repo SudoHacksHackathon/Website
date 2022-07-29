@@ -3,8 +3,11 @@ import { useState } from "react";
 import ScriptLine from "../components/ScriptLine";
 import Button from "../components/Button";
 import getOSData from "../util/getOSData";
+import useTitle from "../hooks/useTitle";
 
 const IntroScreen = ({ nextScreen }: { nextScreen: () => void }) => {
+  useTitle("Home | SudoHacks");
+
   const OSData = getOSData();
   const [revealed, setRevealed] = useState(false);
 

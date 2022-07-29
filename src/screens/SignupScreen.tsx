@@ -8,9 +8,11 @@ import generateRandomText from "../util/generateRandomText";
 import delay from "../util/delay";
 import getOSData from "../util/getOSData";
 
-import { useNavigate } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
+  useTitle("Reserve a Spot | SudoHacks")
+
   const OSData = getOSData();
 
   const [randomText, setRandomText] = useState("\u00a0"); // Invisible space so randomText evaluates to true (&nbsp;)
@@ -18,8 +20,6 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  const navigate = useNavigate();
 
   const loadForm = async () => {
     for (let j = 0; j < 100; j++) {

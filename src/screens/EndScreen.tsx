@@ -8,6 +8,7 @@ import DiscordIcon from "../icons/DiscordIcon";
 import SlackIcon from "../icons/SlackIcon";
 import InstagramIcon from "../icons/InstagramIcon";
 import TwitterIcon from "../icons/TwitterIcon";
+import useTitle from "../hooks/useTitle";
 
 const SocialButton = ({
   icon,
@@ -27,6 +28,8 @@ const SocialButton = ({
 );
 
 const EndScreen = () => {
+  useTitle("Thanks | SudoHacks");
+
   const OSData = getOSData();
   const [revealed, setRevealed] = useState(false);
 
@@ -76,12 +79,14 @@ const EndScreen = () => {
               <SocialButton
                 icon={InstagramIcon}
                 text="Instagram"
-                action={() => console.log("Instagram")}
+                action={() => window.open("https://www.instagram.com/sudo_hacks/", "_blank")}
               />
               <SocialButton
                 icon={TwitterIcon}
                 text="Twitter"
-                action={() => console.log("Twitter")}
+                action={() =>
+                  window.open("https://twitter.com/sudo_hacks", "_blank")
+                }
               />
             </div>
           </div>
