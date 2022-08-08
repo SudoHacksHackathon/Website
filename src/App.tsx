@@ -39,7 +39,7 @@ const App = () => {
         canvasClassName="brightness-150"
       />
       <div className="bg-gray-900 h-full w-full flex justify-center place-items-center selection:bg-slate-200 selection:text-black p-3">
-        <div className="rounded-xl lg:h-[54rem] lg:w-[96rem] w-[min(100%,_75rem)] h-[min(100%,_42.1875rem)] bg-black/76 backdrop-blur-sm font-mono flex flex-col">
+        <div className="rounded-xl w-[min(100%,_75rem)] h-[min(100%,_42.1875rem)] bg-black/75 backdrop-blur-sm font-mono flex flex-col">
           <div className="handle rounded-t-xl w-full h-7 bg-white border-x-2 border-t-2 border-slate-700 select-none">
             <div className="flex place-items-center w-full h-full">
               <div className="flex justify-start align-items-center pl-3">
