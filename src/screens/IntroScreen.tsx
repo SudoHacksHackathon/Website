@@ -21,17 +21,17 @@ const IntroScreen = ({ nextScreen }: { nextScreen: () => void }) => {
       {/* TODO: add text-sizes and such to a theme! */}
       {revealed && (
         <>
-          <h1 className="text-slate-50 lg:text-5xl md:text-4xl text-3xl">
+          <h1 className="text-slate-50 xl:text-7xl lg:text-5xl md:text-4xl text-3xl">
             <span className="text-gray-600"># </span> Welcome to{" "}
             <span className="text-green-500">SudoHacks</span> 2022!
           </h1>
 
-          <h2 className="text-slate-50 lg:text-3xl md:text-2xl text-xl">
+          <h2 className="text-slate-50 xl:text-5xl lg:text-3xl md:text-2xl text-xl">
             <span className="text-gray-600">## </span> A hackathon run by
             students, for students.
           </h2>
 
-          <p className="text-slate-50 lg:text-lg md:text-md text-sm leading-7">
+          <p className="text-slate-50 xl:text-xl lg:text-lg md:text-md text-sm leading-7">
             SudoHacks is an online hackathon for students (anyone under 18) all
             over the world. In four days, teams are tasked with building and
             presenting an application on{" "}
@@ -45,15 +45,15 @@ const IntroScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           </p>
 
           <div className="flex flex-col lg:space-y-14 md:space-y-10 space-y-7 grow place-items-center justify-center">
-            <h1 className="text-slate-50 lg:text-5xl md:text-4xl text-3xl text-center">
+            <h1 className="text-slate-50 xl:text-7xl lg:text-5xl md:text-4xl text-3xl text-center">
               Date: <span className="text-green-500">August 2022</span>
               <br />
-              <span className="lg:text-lg md:text-md text-sm">
+              <span className="xl:text-2xl lg:text-lg md:text-md text-sm">
                 An email will be sent out with the exact date soon!
               </span>
             </h1>
             <Button
-              textClass="lg:text-4xl md:text-3xl text-2xl"
+              textClass="xl:text-5xl lg:text-4xl md:text-3xl text-2xl"
               action={nextScreen}
             >
               Click here to reserve your spot!
