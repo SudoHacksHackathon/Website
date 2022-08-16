@@ -11,7 +11,7 @@ import getOSData from "../util/getOSData";
 import useTitle from "../hooks/useTitle";
 
 const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
-  useTitle("Reserve a Spot | SudoHacks")
+  useTitle("Reserve a Spot | SudoHacks");
 
   const OSData = getOSData();
 

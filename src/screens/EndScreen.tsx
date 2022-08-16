@@ -79,7 +79,9 @@ const EndScreen = () => {
               <SocialButton
                 icon={InstagramIcon}
                 text="Instagram"
-                action={() => window.open("https://www.instagram.com/sudo_hacks/", "_blank")}
+                action={() =>
+                  window.open("https://www.instagram.com/sudo_hacks/", "_blank")
+                }
               />
               <SocialButton
                 icon={TwitterIcon}
