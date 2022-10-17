@@ -59,7 +59,7 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           loadForm();
         }}
       >
-        {OSData.commands.execute + " ./signup.sh"}
+        {OSData.commands.execute + " ./interest.sh"}
       </ScriptLine>
 
       {randomText ? (
@@ -74,6 +74,9 @@ const SignupScreen = ({ nextScreen }: { nextScreen: () => void }) => {
           {/* empty frame to stop redirection */}
 
           <form className="sm:w-5/6 w-full" target="dummyframe">
+            <h1 className="text-slate-50 lg:text-5xl md:text-4xl text-3xl mb-6">
+              Interest Form
+            </h1>
             <div className="mb-6">
               <label
                 htmlFor="name"
